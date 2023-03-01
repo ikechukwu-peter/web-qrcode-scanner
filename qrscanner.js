@@ -33,7 +33,7 @@ function scan() {
   }
 
   // Call the scan function again on the next frame
-  //   requestAnimationFrame(scan);
+  requestAnimationFrame(scan);
 }
 
 // Start scanning
