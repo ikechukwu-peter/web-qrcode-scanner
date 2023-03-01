@@ -10,9 +10,10 @@ const constraints = {
   },
 };
 
-alert(JSON.stringify(constraints));
+alert(JSON.stringify(constraints), 2);
 // Start the video stream
-navigator.mediaDevices
+navigator
+  .mediaDevices()
   .getUserMedia(constraints)
   .then((stream) => {
     video.srcObject = stream;
@@ -37,7 +38,7 @@ function scan() {
   if (code) {
     console.log(code.data, code);
     document.getElementById("result").innerHTML = code.data;
-    alert("WHAT I GOT", JSON.stringify(code.data));
+    alert("WHAT I GOT", code.data);
   }
 
   // Call the scan function again on the next frame
