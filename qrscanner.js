@@ -3,9 +3,17 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+// Define media stream constraints
+const constraints = {
+  video: {
+    facingMode: { exact: "environment" }, // Use rear-facing camera
+  },
+};
+
+alert(JSON.stringify(constraints));
 // Start the video stream
 navigator.mediaDevices
-  .getUserMedia({ video: true })
+  .getUserMedia({ video: true, facingMode: { exact: "environment" } })
   .then((stream) => {
     video.srcObject = stream;
     video.play();
