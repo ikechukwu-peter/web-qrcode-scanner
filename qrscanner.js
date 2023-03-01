@@ -13,7 +13,7 @@ const constraints = {
 alert(JSON.stringify(constraints));
 // Start the video stream
 navigator.mediaDevices
-  .getUserMedia({ video: true, facingMode: { exact: "environment" } })
+  .getUserMedia(constraints)
   .then((stream) => {
     video.srcObject = stream;
     video.play();
